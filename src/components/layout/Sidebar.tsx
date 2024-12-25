@@ -18,7 +18,7 @@ export default function Sidebar() {
   return (
     <aside
       className={`border-r border-[var(--border-color)] p-4 transition-all duration-300 ${
-        isCollapsed ? 'w-20' : 'w-64'
+        isCollapsed ? 'w-20 ' : 'w-64'
       }`}
     >
       <div className="flex items-center justify-between mb-8">
