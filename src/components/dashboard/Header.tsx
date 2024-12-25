@@ -10,7 +10,7 @@ export const Header = ({ title, subtitle }: Promps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   return (
-    <Box mb="30px">
+    <Box mb="30px" ml="20px" mt="10px">
       <Typography
         variant="h2"
         color={colors.grey[100]}

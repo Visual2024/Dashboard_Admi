@@ -11,14 +11,25 @@
   --border-color: #334155;
 }
 
+* {
+  margin: 0 0;
+}
+
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-sans);
+ 
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
 .card {
-  @apply bg-[var(--card-bg)] rounded-xl border border-[var(--border-color)] p-4;
+  @apply bg-[var(--card-bg)] rounded-xl border border-[var(--border-color)];
 }
 
 .sidebar-link {

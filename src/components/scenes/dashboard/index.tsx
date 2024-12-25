@@ -7,21 +7,30 @@ import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import TrafficIcon from "@mui/icons-material/Traffic";
 import Header from "../../dashboard/Header";
-import LineChart from "../../components/LineChart";
-import GeographyChart from "../../components/GeographyChart";
-import BarChart from "../../components/BarChart";
-import StatBox from "../../components/StatBox";
-import ProgressCircle from "../../components/ProgressCircle";
+import LineChart from "../../dashboard/LineChart";
+import GeographyChart from "../../dashboard/GeographyChart";
+import BarChart from "../../dashboard/BarChart";
+import StatBox from "../../dashboard/StatBox";
+import ProgressCircle from "../../dashboard/ProgressCircle";
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const styles = {
+    scrollbar: {
+      "::-webkit-scrollbar": {
+        width: 0,
+      },
+    },
+  };
+
+
   return (
-    <Box m="20px">
+    <Box sx={styles.scrollbar} bgcolor={colors.primary[400]} >
       {/* HEADER */}
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+        <Header title="DASHBOARD" subtitle="Bienvenido a tu panel administrativo" />
 
         <Box>
           <Button
@@ -31,9 +40,10 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",
+              margin: "10px 20px"
             }}
           >
-            <DownloadOutlinedIcon sx={{ mr: "10px" }} />
+            <DownloadOutlinedIcon sx={{ mr: "20px" }} />
             Download Reports
           </Button>
         </Box>
@@ -48,8 +58,9 @@ const Dashboard = () => {
       >
         {/* ROW 1 */}
         <Box
+          component="div"
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -61,14 +72,15 @@ const Dashboard = () => {
             increase="+14%"
             icon={
               <EmailIcon
-                sx={{ color: colors.greenAccent[600], fontSize: "26px" }}
+                sx={{ color: colors.greenAccent[600], fontSize: "16px" }}
               />
             }
           />
         </Box>
         <Box
+          component="div"
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -86,8 +98,9 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          component="div"
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -105,8 +118,9 @@ const Dashboard = () => {
           />
         </Box>
         <Box
+          component="div"
           gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           display="flex"
           alignItems="center"
           justifyContent="center"
@@ -126,9 +140,10 @@ const Dashboard = () => {
 
         {/* ROW 2 */}
         <Box
+          component="div"
           gridColumn="span 8"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
         >
           <Box
             mt="25px"
@@ -166,17 +181,20 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
+          component="div"
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
+
           overflow="auto"
         >
           <Box
+            component="div"
             display="flex"
             justifyContent="space-between"
             alignItems="center"
             borderBottom={`4px solid ${colors.primary[500]}`}
-            colors={colors.grey[100]}
+            sx={{ colors: colors.grey[100] }}
             p="15px"
           >
             <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
@@ -191,6 +209,7 @@ const Dashboard = () => {
               alignItems="center"
               borderBottom={`4px solid ${colors.primary[500]}`}
               p="15px"
+              sx={styles.scrollbar}
             >
               <Box>
                 <Typography
@@ -206,7 +225,8 @@ const Dashboard = () => {
               </Box>
               <Box color={colors.grey[100]}>{transaction.date}</Box>
               <Box
-                backgroundColor={colors.greenAccent[500]}
+                component="div"
+                sx={{ backgroundColor: colors.greenAccent[500] }}
                 p="5px 10px"
                 borderRadius="4px"
               >
@@ -218,12 +238,13 @@ const Dashboard = () => {
 
         {/* ROW 3 */}
         <Box
+          component="div"
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           p="30px"
         >
-          <Typography variant="h5" fontWeight="600">
+          <Typography variant="h5" color={"#fff"} fontWeight="600" className="text-white">
             Campaign
           </Typography>
           <Box
@@ -237,21 +258,24 @@ const Dashboard = () => {
               variant="h5"
               color={colors.greenAccent[500]}
               sx={{ mt: "15px" }}
+
             >
               $48,352 revenue generated
             </Typography>
-            <Typography>Includes extra misc expenditures and costs</Typography>
+            <Typography color={"#fff"}>Includes extra misc expenditures and costs</Typography>
           </Box>
         </Box>
         <Box
+          component="div"
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
         >
           <Typography
             variant="h5"
             fontWeight="600"
             sx={{ padding: "30px 30px 0 30px" }}
+            color={"#fff"}
           >
             Sales Quantity
           </Typography>
@@ -260,15 +284,17 @@ const Dashboard = () => {
           </Box>
         </Box>
         <Box
+          component="div"
           gridColumn="span 4"
           gridRow="span 2"
-          backgroundColor={colors.primary[400]}
+          sx={{ backgroundColor: colors.primary[400] }}
           padding="30px"
         >
           <Typography
             variant="h5"
             fontWeight="600"
             sx={{ marginBottom: "15px" }}
+            color={"#fff"}
           >
             Geography Based Traffic
           </Typography>
